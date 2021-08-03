@@ -26,9 +26,7 @@ const TextEditor = () => {
 
   console.log(process.env.REACT_APP_SERVER_URL);
   useEffect(() => {
-    const s = io(SERVER_URL, {
-      withCredentials: true,
-    });
+    const s = io(SERVER_URL);
     setSocket(s);
 
     return () => {
