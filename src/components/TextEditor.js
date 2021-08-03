@@ -17,13 +17,14 @@ const TOOLBAR_OPTIONS = [
   ["clean"],
 ];
 
-const SERVER_URL = process.env.SERVER_URL || "http://localhost:3001";
+const SERVER_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:3001";
 
 const TextEditor = () => {
   let { id: documentId } = useParams();
   const [socket, setSocket] = useState();
   const [quill, setQuill] = useState();
 
+  console.log(process.env.REACT_APP_SERVER_URL);
   useEffect(() => {
     const s = io(SERVER_URL);
     setSocket(s);
