@@ -26,7 +26,7 @@ const TextEditor = () => {
 
   console.log(process.env.REACT_APP_SERVER_URL);
   useEffect(() => {
-    const s = io(SERVER_URL);
+    const s = io(SERVER_URL, { transports: ["websocket"] });
     setSocket(s);
 
     return () => {
