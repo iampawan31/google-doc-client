@@ -17,7 +17,7 @@ const TOOLBAR_OPTIONS = [
   ["clean"],
 ];
 
-const SERVER_URL = "http://localhost:3001";
+const SERVER_URL = process.env.SERVER_URL || "http://localhost:3001";
 
 const TextEditor = () => {
   let { id: documentId } = useParams();
